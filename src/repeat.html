@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+	<script src="sequence.js"></script>
+	<script src="repeat.js"></script>
+	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="boardTemplate.js"></script>
+	<link rel="stylesheet" type="text/css" href="repeat.css" />
+</head>
+
+<body>
+	<div id="board" />
+	<script type="text/javascript">
+    $(function () {
+        $("#board").html(boardTemplate);
+
+        var sequence = new RandomColorSequence(4);
+        var board = new Board(sequence);
+    })
+</script>
+</body>
+
+</html>
