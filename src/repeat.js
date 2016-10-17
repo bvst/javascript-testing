@@ -5,19 +5,24 @@ function Board(sequence) {
     clearColors();
     $('#play').click(function () { play(); });
 
-    this.show = show;
     function show(color) {
         clearColors();
 
         switch (color) {
             case 'red':
+                $('#red').css('background-color', 'red');
+                break;
             case 'green':
+                $('#green').css('background-color', 'green');
+                break;
             case 'blue':
+                $('#blue').css('background-color', 'blue');
+                break;
             case 'yellow':
-                $('#' + color).css('background-color', color);
+                $('#yellow').css('background-color', 'yellow');
                 break;
         }
-    }
+    };
 
     function clearColors() {
         $('#red').css('background-color', 'pink');
@@ -32,7 +37,7 @@ function Board(sequence) {
         flashColor();
 
         function flashColor() {
-            var colorToShow = board.sequence.getItem(currentColorShown);
+            var colorToShow = board.sequence.items[currentColorShown];
             show(colorToShow);
             currentColorShown++;
             setTimeout(hideColor, 500);

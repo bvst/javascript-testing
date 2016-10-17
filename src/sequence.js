@@ -5,12 +5,6 @@ function RandomColorSequence(length) {
         var color = numberToColor(number);
         this.items.push(color);
     }
-    this.getItem = function (index) {
-        if (this.items.length <= index) {
-            throw 'Invalid item index';
-        }
-        return this.items[index];
-    };
 }
 
 RandomColorSequence.numberToColor = numberToColor;
